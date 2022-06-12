@@ -8,6 +8,7 @@
 #define L "\033[2m"
 #define N "\033[0m"
 
+int _ret;
 
 void _assert(
         const char * name,
@@ -23,11 +24,14 @@ void _assert(
                   YELLOW "// %s:%d" N "\n",
                   subtest, name, expr, file, line);
     else
+    {
         printf(BOLD RED "FAIL: " N
                BOLD "[%2d] %-10s"
                L PURPLE "   %-36s "
                YELLOW "// %s:%d" N "\n",
                subtest, name, expr, file, line);
+        _ret = 1;
+    }
 }
 
 
@@ -35,4 +39,5 @@ void _assert(
 int main()
 {
     test_example();
+    return _ret;
 }
