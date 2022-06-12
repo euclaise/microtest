@@ -20,13 +20,13 @@ void _assert(
     if (t) printf(GREEN "PASS: " N
                   "[%d] %-10s" 
                   L PURPLE "   %-36s "
-                  YELLOW "// %s:%d\n" N,
+                  YELLOW "// %s:%d" N "\n",
                   subtest, name, expr, file, line);
     else
         printf(BOLD RED "FAIL: " N
                BOLD "[%d] %-10s"
                L PURPLE "   %-36s "
-               YELLOW "// %s:%d\n" N,
+               YELLOW "// %s:%d" N "\n",
                subtest, name, expr, file, line);
 }
 
