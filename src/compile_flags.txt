@@ -1,0 +1,4 @@
+-std=c89
+-pedantic
+-Wall
+-Wextra
