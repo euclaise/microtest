@@ -1,3 +1,4 @@
+TESTFLAGS := $(CFLAGS) $(shell cat src/compile_flags.txt | tr '\n' ' ')
 CFLAGS := $(CFLAGS) $(shell cat src/compile_flags.txt | tr '\n' ' ')
 CFLAGS := $(CFLAGS) -g
 FILES := $(wildcard src/*.c)
@@ -9,7 +10,7 @@ main:
 	$(CC) $(FILES) $(CFLAGS)
 
 test:
-	$(CC) $(FILES) $(TESTFILES) $(CFLAGS) -DTEST
+	$(CC) $(FILES) $(TESTFILES) $(TESTFLAGS)
 	./a.out
 	@make clean
 
