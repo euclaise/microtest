@@ -3,7 +3,7 @@
 #define GREEN "\033[32m"
 #define RED "\033[31m"
 #define BOLD "\033[1m"
-#define CYAN "\033[33m"
+#define YELLOW "\033[33m"
 #define PURPLE "\033[35m"
 #define L "\033[2m"
 #define N "\033[0m"
@@ -20,13 +20,13 @@ void _assert(
     if (t) printf(GREEN "PASS: " N
                   "[%d] %-10s" 
                   L PURPLE "   %-36s "
-                  CYAN "// %s:%d\n" N,
+                  YELLOW "// %s:%d\n" N,
                   subtest, name, expr, file, line);
     else
         printf(BOLD RED "FAIL: " N
                BOLD "[%d] %-10s"
                L PURPLE "   %-36s "
-               CYAN "// %s:%d\n" N,
+               YELLOW "// %s:%d\n" N,
                subtest, name, expr, file, line);
 }
 
